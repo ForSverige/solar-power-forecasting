@@ -1,20 +1,59 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+☀️ Solar Power Forecasting: The Bias-Variance Tradeoff App
 
-# Run and deploy your AI Studio app
+Live Application: https://solar-power-forecasting.vercel.app/
 
-This contains everything you need to run your app locally.
+<!-- TODO: Add a screenshot of the app here! -->
 
-View your app in AI Studio: https://ai.studio/apps/drive/13YgiryeEUr_YMhFe4sKPX1_yyENedmA_
+<!--  -->
 
-## Run Locally
+📖 Project Overview
 
-**Prerequisites:**  Node.js
+This is an interactive web application designed as an educational tool for students to explore the "Bias-Variance Tradeoff" in machine learning. It uses a real-world dataset of solar power forecasting for Västerås, Sweden.
+
+The app allows users to incrementally add features to a machine learning model and instantly see how the model's complexity affects its accuracy, demonstrating the core concepts of underfitting, optimal fitting, and overfitting.
+
+This project was bootstrapped using the Google AI Studio app builder (Vite + React) and is based on the analysis from the PowerForecasting.pdf (Jupyter Notebook).
+
+🎓 Key Learning Concepts
+
+This app allows students to interactively discover:
+
+Feature Selection: How adding features one-by-one (incremental feature selection) impacts model accuracy.
+
+High Bias (Underfitting): Why a model with too few features (e.g., 1-3) is too simple and has a high error.
+
+High Variance (Overfitting): Why a model with too many features (e.g., all 38) performs worse on unseen test data than a simpler, "just right" model.
+
+The Bias-Variance Tradeoff: How the 15-feature model finds the "sweet spot" with the lowest error, balancing simplicity and complexity.
+
+💻 How to Run Locally
+
+This project was built with Vite + React. To run it on your local machine:
+
+Clone (or download and unzip) this repository.
+
+Install Node.js (LTS version recommended).
+
+Open a terminal in the project's root folder.
+
+Install the necessary dependencies:
+
+npm install
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Start the local development server:
+
+npm run dev
+
+
+Open the provided URL (usually http://localhost:5173) in your browser.
+
+🛠️ Technology & Data
+
+App Framework: Vite + React + TypeScript
+
+Visualization: D3.js
+
+Data Source: NASA POWER API (for Västerås weather data)
+
+Forecasting Model: XGBoost (as used in the original Python notebook)
