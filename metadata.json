@@ -1,0 +1,5 @@
+{
+  "name": "Solar Power Forecasting",
+  "description": "An interactive educational tool to explore key machine learning concepts like the bias-variance tradeoff and model performance using a solar power forecasting example.",
+  "requestFramePermissions": []
+}
