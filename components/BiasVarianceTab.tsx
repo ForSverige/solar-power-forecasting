@@ -21,6 +21,24 @@ const BiasVarianceTab: React.FC<BiasVarianceTabProps> = ({ gameStep, setGameStep
     return PERFORMANCE_DATA.filter(f => !selectedNames.has(f.name));
   }, [correctlySelectedFeatures]);
 
+  const shuffledRemainingFeatures = useMemo(() => {
+    // Fisher-Yates shuffle algorithm to randomize the feature order for the game
+    const array = [...remainingFeatures];
+    let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex !== 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }, [remainingFeatures]);
+
   const currentPerformance = useMemo(() => {
     return gameStep > 0 ? PERFORMANCE_DATA[gameStep - 1] : { rmse: 0, displayName: 'N/A' };
   }, [gameStep]);
@@ -133,7 +151,7 @@ const BiasVarianceTab: React.FC<BiasVarianceTabProps> = ({ gameStep, setGameStep
                     
                     <p className="text-sm font-medium text-gray-800 mb-2">Choose the best feature to add from the list below:</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-80 overflow-y-auto pr-2">
-                      {remainingFeatures.map(feature => (
+                      {shuffledRemainingFeatures.map(feature => (
                         <button 
                           key={feature.name}
                           onClick={() => handleFeatureSelect(feature)}
