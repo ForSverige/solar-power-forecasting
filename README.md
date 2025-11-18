@@ -1,6 +1,7 @@
 # ☀️ Solar Power Forecasting: The Bias-Variance Tradeoff App
 
-![Solar Power Forecasting Banner](public/assets/solar-banner.png)
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/f65d85e1-0c8f-4a50-835f-5bf6817e3f1d" />
+
 
 [![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
